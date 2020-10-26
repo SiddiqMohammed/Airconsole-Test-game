@@ -6,6 +6,8 @@ public class ballBehaviour : MonoBehaviour
 {
 	public Example logic;
 
+	public static int hitRegister;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -23,6 +25,7 @@ public class ballBehaviour : MonoBehaviour
 		{
 			// Destroy(gameObject);
 			print("hit");
+			hitRegister++;
 		}
 		// else {
 		// 	print("yeet");
