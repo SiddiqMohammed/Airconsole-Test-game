@@ -117,10 +117,10 @@ public class Example : MonoBehaviour {
 	// 	}
 	// }
 
-	// void UpdateScoreUI () {
-	// 	// update text canvas
-	// 	uiText.text = scoreRacketLeft + ":" + scoreRacketRight;
-	// }
+	void UpdateScoreUI () {
+		// update text canvas
+		uiText.text = scoreRacketLeft + ":" + scoreRacketRight;
+	}
 
 	void FixedUpdate () {
 
@@ -136,6 +136,9 @@ public class Example : MonoBehaviour {
 		// 	UpdateScoreUI ();
 		// 	ResetBall (true);
 		// }
+		scoreRacketLeft = ballBehaviour.hitRegister;
+		scoreRacketLeft = ballBehaviour.hitRegister;
+		// if (scoreRacketLeft)
 	}
 
 	void OnDestroy () {
