@@ -65,13 +65,13 @@
       airconsole.message(AirConsole.SCREEN, {move: amount})
     }
     
-    // function moveLeft(amount) {
-    //   airconsole.message(AirConsole.SCREEN, {move: amount})
-    // }
+    function moveLeft(amount) {
+      airconsole.message(AirConsole.SCREEN, {moveLeft: amount})
+    }
     
-    // function moveRight(amount) {
-    //   airconsole.message(AirConsole.SCREEN, {move: amount})
-    // }
+    function moveRight(amount) {
+      airconsole.message(AirConsole.SCREEN, {moveRight: amount})
+    }
 
     </script>
     <style type="text/css">
@@ -90,7 +90,7 @@
 
         .button {
             display: inline-block;
-            height: 45%;
+            height: 30%;
             width: 98%;
             background-color: #222;
             position: relative;
@@ -119,12 +119,14 @@
     <div class=button ontouchend="move(5)">
         <div class="button_label">UP</div>
     </div>
-    <!-- <div class=button ontouchstart="moveRight(-5)" ontouchend="moveRight(0)">
+    <hr>
+    <div class=button ontouchstart="moveRight(5)" ontouchend="moveRight(0)">
         <div class="button_label">RIGHT</div>
     </div>
+    <hr>
     <div class=button ontouchstart="moveLeft(5)" ontouchend="moveLeft(0)">
         <div class="button_label">LEFT</div>
-    </div> -->
+    </div>
     <div id="player_id"></div>
 </body>
 </html>

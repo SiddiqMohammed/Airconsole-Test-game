@@ -68,10 +68,29 @@ public class Example : MonoBehaviour {
 		int active_player = AirConsole.instance.ConvertDeviceIdToPlayerNumber (device_id);
 		if (active_player != -1) {
 			if (active_player == 0) {
-				this.leftB.velocity = Vector3.up * (float)data ["move"];
+				if (data["move"] != null) {
+					this.leftB.velocity = Vector3.up * (float)data ["move"];
+				}
+				if (data["moveRight"] != null) {
+					this.leftB.velocity = Vector3.right * (float)data ["moveRight"];
+				}
+				if (data["moveLeft"] != null) {
+					this.leftB.velocity = Vector3.left * (float)data ["moveLeft"];
+				}
 			}
 			if (active_player == 1) {
-				this.rightB.velocity = Vector3.up * (float)data ["move"];
+				if (data["move"] != null) {
+					this.rightB.velocity = Vector3.up * (float)data ["move"];
+				}
+				if (data["moveRight"] != null) {
+					this.rightB.velocity = Vector3.right * (float)data ["moveRight"];
+				}
+				if (data["moveLeft"] != null) {
+					this.rightB.velocity = Vector3.left * (float)data ["moveLeft"];
+				}
+				// this.rightB.velocity = Vector3.up * (float)data ["move"];
+				// this.rightB.velocity = Vector3.right * (float)data ["moveRight"];
+				// this.rightB.velocity = Vector3.left * (float)data ["moveLeft"];
 			}
 		}
 	}
