@@ -9,8 +9,9 @@ public class Example : MonoBehaviour {
 
 	public Rigidbody2D rightB;
 	public Rigidbody2D leftB;
-	public Rigidbody2D ball;
-	public float ballSpeed = 10f;
+	// public Rigidbody2D ball;
+	// public float ballSpeed = 10f;
+
 	public Text uiText;
 #if !DISABLE_AIRCONSOLE 
 	private int scoreRacketLeft = 0;
@@ -52,7 +53,7 @@ public class Example : MonoBehaviour {
 				StartGame ();
 			} else {
 				AirConsole.instance.SetActivePlayers (0);
-				ResetBall (false);
+				// ResetBall (false);
 				uiText.text = "PLAYER LEFT - NEED MORE PLAYERS";
 			}
 		}
@@ -77,45 +78,45 @@ public class Example : MonoBehaviour {
 
 	void StartGame () {
 		AirConsole.instance.SetActivePlayers (2);
-		ResetBall (true);
+		// ResetBall (true);
 		scoreRacketLeft = 0;
 		scoreRacketRight = 0;
-		UpdateScoreUI ();
+		// UpdateScoreUI ();
 	}
 
-	void ResetBall (bool move) {
+	// void ResetBall (bool move) {
 		
-		// place ball at center
-		this.ball.position = Vector3.zero;
+	// 	// place ball at center
+	// 	this.ball.position = Vector3.zero;
 		
-		// push the ball in a random direction
-		if (move) {
-			Vector3 startDir = new Vector3 (Random.Range (-1, 1f), Random.Range (-0.1f, 0.1f), 0);
-			this.ball.velocity = startDir.normalized * this.ballSpeed;
-		} else {
-			this.ball.velocity = Vector3.zero;
-		}
-	}
+	// 	// push the ball in a random direction
+	// 	if (move) {
+	// 		Vector3 startDir = new Vector3 (Random.Range (-1, 1f), Random.Range (-0.1f, 0.1f), 0);
+	// 		this.ball.velocity = startDir.normalized * this.ballSpeed;
+	// 	} else {
+	// 		this.ball.velocity = Vector3.zero;
+	// 	}
+	// }
 
-	void UpdateScoreUI () {
-		// update text canvas
-		uiText.text = scoreRacketLeft + ":" + scoreRacketRight;
-	}
+	// void UpdateScoreUI () {
+	// 	// update text canvas
+	// 	uiText.text = scoreRacketLeft + ":" + scoreRacketRight;
+	// }
 
 	void FixedUpdate () {
 
 		// check if ball reached one of the ends
-		if (this.ball.position.x < -9f) {
-			scoreRacketRight++;
-			UpdateScoreUI ();
-			ResetBall (true);
-		}
+		// if (this.ball.position.x < -9f) {
+		// 	scoreRacketRight++;
+		// 	UpdateScoreUI ();
+		// 	ResetBall (true);
+		// }
 
-		if (this.ball.position.x > 9f) {
-			scoreRacketLeft++;
-			UpdateScoreUI ();
-			ResetBall (true);
-		}
+		// if (this.ball.position.x > 9f) {
+		// 	scoreRacketLeft++;
+		// 	UpdateScoreUI ();
+		// 	ResetBall (true);
+		// }
 	}
 
 	void OnDestroy () {
@@ -125,5 +126,18 @@ public class Example : MonoBehaviour {
 			AirConsole.instance.onMessage -= OnMessage;
 		}
 	}
+
+	// void OnCollisionEnter2D(Collision2D other) {
+	// 	if (other.gameObject.tag == "hitReg")
+	// 	{
+	// 		// Destroy(gameObject);
+	// 		print("hit");
+	// 	}
+	// 	// else {
+	// 	// 	print("yeet");
+	// 	// }
+	// }
+	
+
 #endif
 }

@@ -437,8 +437,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightB: {fileID: 1887614989}
   leftB: {fileID: 734202168}
-  ball: {fileID: 0}
-  ballSpeed: 10
   uiText: {fileID: 0}
 --- !u!4 &1299839652
 Transform:
@@ -467,7 +465,7 @@ GameObject:
   - component: {fileID: 1301153141}
   m_Layer: 0
   m_Name: platform1
-  m_TagString: Untagged
+  m_TagString: hitReg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,7 +544,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -575,7 +573,7 @@ GameObject:
   - component: {fileID: 1653597687}
   m_Layer: 0
   m_Name: platform2
-  m_TagString: Untagged
+  m_TagString: hitReg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653597684}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 6.3098845, y: 3.3834248, z: 2.0209785}
+  m_LocalPosition: {x: 4.91, y: 6.09, z: 2.0209785}
   m_LocalScale: {x: 2.4999998, y: 1.5000001, z: 1}
   m_Children: []
   m_Father: {fileID: 900588167}
